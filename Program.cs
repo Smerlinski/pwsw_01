@@ -10,17 +10,23 @@ namespace pwsw_01
     {
         static void Main(string[] args)
         {
+            
+            Liczby();
+        }
+        static void Liczby()
+        {
             List<int> unikalne = new List<int>();
             Console.WriteLine("Obliczanie unikalnych cyfr.");
             Console.WriteLine("Podaj liczbe cyfr, ktore zostana sprawdzone:");
             int ilosc = Convert.ToInt32(Console.ReadLine());
-            while (ilosc > 0){
+            while (ilosc > 0)
+            {
                 int cyfra = Convert.ToInt32(Console.ReadLine());
                 if (!unikalne.Contains(cyfra))
                     unikalne.Add(cyfra);
-                ilosc--;                
+                ilosc--;
             }
-            Console.WriteLine("Ilosc unikatowych cyft to " + unikalne.Count );
+            Console.WriteLine("Ilosc unikatowych cyfr to " + unikalne.Count);
             Console.ReadKey();
         }
     }
