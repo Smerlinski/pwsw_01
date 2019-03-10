@@ -103,10 +103,27 @@ namespace pwsw_01
         }
         static void Binarne()
         {
-            string podane = "001001000000010101";
-            string dziury = @"\G(10+1)";
-            Match match = Regex.Match(podane, dziury);
-            Console.WriteLine(match);
+            Boolean flag1 = false; 
+            Boolean flag2 = false;
+            int wynik = 0;
+            Console.WriteLine("Wprowadz ciag binarny: ");
+            string podane1 = Console.ReadLine();
+            char[] podane = podane1.ToCharArray(0,podane1.Length);
+            for(int i = 0; i < podane.Length; i++)
+            {
+                if (podane[i].Equals('1') && flag1 && flag2)
+                {
+                    flag2 = false;
+                    wynik++;
+                }
+                if (podane[i].Equals('0') && flag1)
+                    flag2 = true;
+                if (podane[i].Equals('1'))
+                    flag1 = true;
+                
+            }
+            Console.WriteLine("Ilosc dziur binarnych to: " + wynik);
+            Console.ReadKey();
             Main();
         }
     }
